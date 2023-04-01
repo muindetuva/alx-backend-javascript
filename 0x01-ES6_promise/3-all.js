@@ -5,7 +5,7 @@ export default function handleProfileSignup() {
   let firstName;
   let lastName;
 
-  return uploadPhoto
+  return uploadPhoto()
     .then((data) => {
       // Store body in a variable
       body = data.body;
