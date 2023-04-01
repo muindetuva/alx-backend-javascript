@@ -7,7 +7,7 @@ export default function handleProfileSignup() {
 
   const response = uploadPhoto();
 
-  response
+  return response
     .then((data) => data.body)
     .then((data) => {
       body = data;
