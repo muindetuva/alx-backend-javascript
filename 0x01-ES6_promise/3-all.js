@@ -5,12 +5,12 @@ export default function handleProfileSignup() {
   let firstName;
   let lastName;
 
-  const response = uploadPhoto();
-
-  return response
-    .then((data) => data.body)
+  return uploadPhoto
     .then((data) => {
-      body = data;
+      // Store body in a variable
+      body = data.body;
+
+      // Return a new promise
       return createUser();
     })
     .then((data) => {
