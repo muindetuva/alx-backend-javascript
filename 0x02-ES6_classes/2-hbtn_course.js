@@ -33,4 +33,8 @@ export default class ALXCourse {
     }
     this._students = value;
   }
+
+  get students() {
+    return this._students;
+  }
 }
