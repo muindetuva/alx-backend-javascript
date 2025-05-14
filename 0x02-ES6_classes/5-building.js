@@ -17,7 +17,7 @@ export default class Building {
     return this._sqft;
   }
 
-  // Enforce override
   evacuationWarningMessage() {
+    return `Evacuate the building ${this.__sqft}`;
   }
 }
