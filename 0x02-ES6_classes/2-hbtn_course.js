@@ -28,7 +28,7 @@ export default class ALXCourse {
   }
 
   set students(value) {
-    if (!Array.isArray(value)) {
+    if (!Array.isArray(value) || !value.every((item) => typeof item === 'string')) {
       throw new TypeError('Students should be array');
     }
     this._students = value;
