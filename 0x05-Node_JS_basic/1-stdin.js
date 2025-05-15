@@ -1,20 +1,15 @@
-// 1-stdin.js
-process.stdout.write('Welcome to ALX, what is your name?\n');
-
 process.stdin.setEncoding('utf8');
 
-let name = '';
+process.stdout.write('Welcome to ALX, what is your name?\n');
 
-process.stdin.on('data', (chunk) => {
-  name += chunk;
+process.stdin.on('readable', () => {
+  const name = process.stdin.read();
 
-  if (process.stdin.isTTY) {
+  if (name !== null) {
     process.stdout.write(`Your name is: ${name}`);
-    process.exit(0);
   }
 });
 
-process.stdin.on('end', () => {
-  process.stdout.write(`Your name is: ${name}`);
+process.stdin.on('exit', () => {
   process.stdout.write('This important software is now closing\n');
 });
