@@ -5,7 +5,9 @@ let name = '';
 process.stdin.on('data', (data) => {
   name = data.toString().trim();
   process.stdout.write(`Your name is: ${name}\n`);
-  process.exit();
+  if (process.stdin.isTTY) {
+    process.exit();
+  }
 });
 
 process.stdin.on('end', () => {
