@@ -11,14 +11,14 @@ describe('SUM', function () {
 describe('SUBTRACT', function () {
   it('should subtract rounded values', function () {
     expect(calculateNumber('SUBTRACT', 1.4, 4.5)).to.equal(-4);
-    expect(calculateNumber('SUBTRACT', 5.5, 2.2)).to.equal(3); // 6 - 3
+    expect(calculateNumber('SUBTRACT', 5.5, 2.2)).to.equal(4);
   });
 });
 
 describe('DIVIDE', function () {
   it('should divide rounded values', function () {
-    expect(calculateNumber('DIVIDE', 1.4, 4.5)).to.equal(0.2);
-    expect(calculateNumber('DIVIDE', 8.3, 2.5)).to.equal(3); // 8 / 3
+    expect(calculateNumber('DIVIDE', 1.4, 4.5)).to.be.closeTo(0.2, 0.0001);
+    expect(calculateNumber('DIVIDE', 8.3, 2.5)).to.be.closeTo(2.6667, 0.0001);
   });
 
   it('should return Error when dividing by 0', function () {
@@ -26,3 +26,4 @@ describe('DIVIDE', function () {
     expect(calculateNumber('DIVIDE', 1.4, 0.4)).to.equal('Error');
   });
 });
+
