@@ -1,4 +1,4 @@
-import fs from 'fs/promises';
+import { promises as fs } from 'fs';
 
 function readDatabase(filePath) {
   return fs.readFile(filePath, 'utf-8')
